@@ -1,0 +1,23 @@
+{
+  "name": "ESP32 + Wokwi (Codespace)",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:0-ubuntu-22.04",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "platformio.platformio-ide",
+        "wokwi.wokwi-vscode",
+        "ms-vscode.vscode-serial-monitor"
+      ],
+      "settings": {
+        "security.workspace.trust.enabled": false,
+        "security.workspace.trust.startupPrompt": "never"
+      }
+    }
+  },
+  "containerEnv": {
+    "PATH": "/home/vscode/.local/bin:${PATH}"
+  },
+  "postCreateCommand": "chmod +x ./scripts/setup_codespace.sh || true && bash ./scripts/setup_codespace.sh"
+}
